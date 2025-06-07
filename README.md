@@ -1,26 +1,26 @@
 # Programming Manual
 
-Esse é um Manual de Programação, ele contém guias e explicações para programar em certas arquiteturas, linguagens e frameworks, assim como boas práticas e exemplos de código.
+This is a Programming Manual. It contains guides and explanations for programming in certain architectures, languages, and frameworks, as well as best practices and code examples.
 
-Usa-se a crate 'mdbook', usada pelo livro do Rust e diversas outras tecnologias, como documentação. Podemos mudar a paleta de cores, pesquisar, imprimir... O mdbook usa arquivos Markdown (.md), tem hot-reloading durante o desenvolvimento e coloca seus arquivos estáticos no diretório ./book que está dentro do .gitignore para deploy.
+We use the `mdbook` crate, which is used by the official Rust book and many other technologies for documentation. We can customize the color palette, search, print, etc. `mdbook` uses Markdown (.md) files, supports hot-reloading during development, and outputs static files into the `./book` directory, which is ignored by Git for deployment purposes.
 
-Se ainda não tiveres o cargo instalado, podes instalar com [Rustup](https://www.rust-lang.org/pt-BR/tools/install). Já vem o Rust e sua toolchain junto, olha que coisa boa...
+If you don't have Cargo installed yet, you can install it with [Rustup](https://www.rust-lang.org/tools/install). It comes with Rust and its toolchain—how convenient!
 
-Para instalar, buildar e servir facilmente o manual tente digitar:
+To install, build, and serve the manual easily, try running:
 
 ```bash
 make dev
 ```
 
-Caso nao funcione, tente buildar e rodar o manual de forma manual.
+If that doesn't work, try building and running the manual manually.
 
-Para instalar a ferramenta que builda o manual, digite:
+To install the tool that builds the manual, run:
 
 ```bash
 cargo install mdbook
 ```
 
-Caso nao tenhas o cargo no seu path, adicione-o à configuração da sua shell (~/.bashrc ou ~/.zshrc) para não precisar digitar o path toda vez (i.e. ~/.cargo/bin/{program}), rode esse código no terminal:
+If `cargo` isn’t in your `PATH`, add it to your shell configuration (`~/.bashrc` or `~/.zshrc`) so you don’t have to type the full path every time (i.e., `~/.cargo/bin/{program}`). Run this in your terminal:
 
 ```bash
 #bash
@@ -28,30 +28,30 @@ echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc
 ```
 
-Com mdbook instalado entre no projeto e digite:
+With `mdbook` installed, enter the project folder and type:
 
 ```bash
 mdbook serve
 ```
 
-Se quiseres escolher o port:
+If you want to choose the port:
 
 ```bash
 mdbook serve --port 9999
 ```
 
-# [Documentação do MdBook](https://rust-lang.github.io/mdBook/index.html)
+# [MdBook Documentation](https://rust-lang.github.io/mdBook/index.html)
 
-Você pode criar uma estrutura em src/SUMMARY.rs de capitulos, com titulos e pastas fictícias. O nível de tabs, 'nests' é reproduzido no livro.
+You can create a structure in `src/SUMMARY.md` for chapters with titles and fake folders. The level of tabs or "nests" is reproduced in the book.
 
 ```markdown
-- [Linguagens](./03_linguagens/00_logica.md)
-  - [TypeScript](./03_linguagens/01_typescript/00_introducao.md)
-    - [Basico](./03_linguagens/01_typescript/01_basico.md)
+- [Languages](./03_languages/00_logic.md)
+  - [TypeScript](./03_languages/01_typescript/00_intro.md)
+    - [Basics](./03_languages/01_typescript/01_basics.md)
 ```
 
-Esses niveis de 'nesting' criam os arquivos automaticamente, você também pode criar arquivos e referenciar o path deles (mas é mais trabalho). O resultado final é esse:
+These levels of nesting generate the files automatically. You can also create files manually and reference their paths (but that’s more work). The end result looks like this:
 
 ![](./assets/nesting.png)
 
-Assim podemos ter um capitulo de linguagens de programação e subcapitulos sobre cada linguagem e dentro delas subcapitulos sobre conceitos básicos e dentro delas subcapitulos sobre frameworks e dentro delas... Crazy? I was crazy once..
+That way, we can have a **chapter for programming languages**, **subchapters for each language**, and **inside them subchapters for basic concepts**, and **within those, subchapters for frameworks**, and **within those...** Crazy? I was crazy once...
